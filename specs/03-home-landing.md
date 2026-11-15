@@ -104,28 +104,28 @@ interface HomeViewProps { games: Game[]; error: string | null }   // games: ya r
 
 ## Acceptance criteria
 
-- [ ] `npm run build` termina sin errores ni errores de tipos.
-- [ ] `npm run lint` termina sin errores, incluidas las reglas de límites de las SPEC 01/02.
-- [ ] `npm run test` pasa todos los tests, incluidos los modificados por el cambio de ruta.
-- [ ] `/` muestra la home con las secciones: hero, "¿POR QUÉ ARCADE VAULT?" (4 tarjetas), "JUEGOS DISPONIBLES AHORA", estadísticas, "ACTIVIDAD EN VIVO", "PRECIOS" y CTA final "¿LISTO PARA JUGAR?".
-- [ ] Las rutas existen en inglés (`/games`, `/games/[id]`, `/games/[id]/play`, `/hall-of-fame`, `/auth`) y `/juegos`, `/juegos/<id>`, `/juegos/<id>/jugar` y `/salon` devuelven 404 (sin redirecciones).
-- [ ] No quedan referencias a las rutas viejas (`/juegos`, `/jugar`, `/salon`) en `app/`, `modules/` ni en los tests.
-- [ ] `/games/xyz` y `/games/xyz/play` muestran 404.
-- [ ] `/games` muestra la Biblioteca con el mismo comportamiento de la SPEC 02 (8 juegos, filtro, "NO HAY RESULTADOS", error con reintento).
-- [ ] La sección "JUEGOS DISPONIBLES AHORA" muestra 6 mini-tarjetas con los primeros 6 juegos de la API y cada una navega a `/games/<id>`.
-- [ ] Si la API de juegos falla, la home sigue renderizando el resto de las secciones y la de mini-tarjetas muestra un mensaje de error con enlace a `/games`.
-- [ ] "EXPLORAR JUEGOS", "VER TODOS LOS JUEGOS →" e "INSERTAR MONEDA →" navegan a `/games`; "CREAR CUENTA" y "EMPEZAR GRATIS →" navegan a `/auth`; "VER SALÓN →" navega a `/hall-of-fame`.
-- [ ] El Nav (escritorio y panel móvil) muestra Inicio, Biblioteca y Salón de la Fama, y **no** muestra "Acerca de".
-- [ ] El enlace activo del Nav es "Inicio" solo en `/`, y "Biblioteca" en `/games` y `/games/<id>` (incluido `/games/<id>/play`).
-- [ ] Los botones "VOLVER AL VAULT" (Detalle y modal del Reproductor) y "VOLVER A LA BIBLIOTECA" (Salón) enlazan a `/games`.
-- [ ] Tras iniciar sesión o registrarse con éxito, se redirige a `/games`.
-- [ ] Al hacer scroll, las secciones con `.reveal` reciben la clase `in` y se animan; sin `IntersectionObserver` el contenido es visible.
-- [ ] La home no importa `infrastructure`, archivos `.json` ni `fs`, y `app/page.tsx` solo compone y obtiene datos por gateway.
-- [ ] En ancho de 375 px la home no tiene scroll horizontal y el hero, las rejillas y el pricing se apilan según la plantilla.
-- [ ] Las pantallas existentes (Detalle, Reproductor, Auth, Salón, Biblioteca) conservan su aspecto tras portar los estilos.
-- [ ] La consola del navegador no muestra errores de hidratación en `/` ni en `/games`.
-- [ ] Los tests no modifican los archivos versionados de `data/`.
-- [ ] No existe la ruta `/acerca` ni código de la página About.
+- [x] `npm run build` termina sin errores ni errores de tipos.
+- [x] `npm run lint` termina sin errores, incluidas las reglas de límites de las SPEC 01/02.
+- [x] `npm run test` pasa todos los tests, incluidos los modificados por el cambio de ruta.
+- [x] `/` muestra la home con las secciones: hero, "¿POR QUÉ ARCADE VAULT?" (4 tarjetas), "JUEGOS DISPONIBLES AHORA", estadísticas, "ACTIVIDAD EN VIVO", "PRECIOS" y CTA final "¿LISTO PARA JUGAR?".
+- [x] Las rutas existen en inglés (`/games`, `/games/[id]`, `/games/[id]/play`, `/hall-of-fame`, `/auth`) y `/juegos`, `/juegos/<id>`, `/juegos/<id>/jugar` y `/salon` devuelven 404 (sin redirecciones).
+- [x] No quedan referencias a las rutas viejas (`/juegos`, `/jugar`, `/salon`) en `app/`, `modules/` ni en los tests.
+- [x] `/games/xyz` y `/games/xyz/play` muestran 404.
+- [x] `/games` muestra la Biblioteca con el mismo comportamiento de la SPEC 02 (8 juegos, filtro, "NO HAY RESULTADOS", error con reintento).
+- [x] La sección "JUEGOS DISPONIBLES AHORA" muestra 6 mini-tarjetas con los primeros 6 juegos de la API y cada una navega a `/games/<id>`.
+- [x] Si la API de juegos falla, la home sigue renderizando el resto de las secciones y la de mini-tarjetas muestra un mensaje de error con enlace a `/games`.
+- [x] "EXPLORAR JUEGOS", "VER TODOS LOS JUEGOS →" e "INSERTAR MONEDA →" navegan a `/games`; "CREAR CUENTA" y "EMPEZAR GRATIS →" navegan a `/auth`; "VER SALÓN →" navega a `/hall-of-fame`.
+- [x] El Nav (escritorio y panel móvil) muestra Inicio, Biblioteca y Salón de la Fama, y **no** muestra "Acerca de".
+- [x] El enlace activo del Nav es "Inicio" solo en `/`, y "Biblioteca" en `/games` y `/games/<id>` (incluido `/games/<id>/play`).
+- [x] Los botones "VOLVER AL VAULT" (Detalle y modal del Reproductor) y "VOLVER A LA BIBLIOTECA" (Salón) enlazan a `/games`.
+- [x] Tras iniciar sesión o registrarse con éxito, se redirige a `/games`.
+- [x] Al hacer scroll, las secciones con `.reveal` reciben la clase `in` y se animan; sin `IntersectionObserver` el contenido es visible.
+- [x] La home no importa `infrastructure`, archivos `.json` ni `fs`, y `app/page.tsx` solo compone y obtiene datos por gateway.
+- [x] En ancho de 375 px la home no tiene scroll horizontal y el hero, las rejillas y el pricing se apilan según la plantilla.
+- [x] Las pantallas existentes (Detalle, Reproductor, Auth, Salón, Biblioteca) conservan su aspecto tras portar los estilos.
+- [x] La consola del navegador no muestra errores de hidratación en `/` ni en `/games`.
+- [x] Los tests no modifican los archivos versionados de `data/`.
+- [x] No existe la ruta `/acerca` ni código de la página About.
 
 ---
 

@@ -10,5 +10,11 @@
     "username": "PLAYER1",
     "email": "player1@vault.gg",
     "password": "vault123"
+  },
+  {
+    "id": "116b2ab4-c3d6-4221-9e62-c3169774332c",
+    "username": "cristhian",
+    "email": "cris@prueba.com",
+    "password": "Cris323@"
   }
 ]
