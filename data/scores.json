@@ -1,0 +1,498 @@
+{
+  "bloque-buster": [
+    {
+      "name": "RGB_QUEEN",
+      "score": 275088,
+      "date": "20/05/2026"
+    },
+    {
+      "name": "GLITCHA",
+      "score": 232454,
+      "date": "20/06/2026"
+    },
+    {
+      "name": "Z3R0COOL",
+      "score": 232104,
+      "date": "05/03/2026"
+    },
+    {
+      "name": "DROID_X",
+      "score": 214488,
+      "date": "20/05/2026"
+    },
+    {
+      "name": "MAGENTA88",
+      "score": 210081,
+      "date": "19/08/2026"
+    },
+    {
+      "name": "VAULT_07",
+      "score": 209958,
+      "date": "01/10/2026"
+    },
+    {
+      "name": "CYBER_LU",
+      "score": 174442,
+      "date": "16/05/2026"
+    },
+    {
+      "name": "NEONFOX",
+      "score": 160117,
+      "date": "20/05/2026"
+    },
+    {
+      "name": "PIXEL_DAD",
+      "score": 140654,
+      "date": "19/01/2026"
+    },
+    {
+      "name": "ARKADYA",
+      "score": 112969,
+      "date": "19/11/2026"
+    },
+    {
+      "name": "VECTORX",
+      "score": 35990,
+      "date": "10/01/2026"
+    },
+    {
+      "name": "PX_KAI",
+      "score": 4146,
+      "date": "13/02/2026"
+    }
+  ],
+  "caida": [
+    {
+      "name": "PIXEL_DAD",
+      "score": 278245,
+      "date": "27/05/2026"
+    },
+    {
+      "name": "Z3R0COOL",
+      "score": 225057,
+      "date": "20/01/2026"
+    },
+    {
+      "name": "NEONFOX",
+      "score": 222599,
+      "date": "28/04/2026"
+    },
+    {
+      "name": "ARKADYA",
+      "score": 216608,
+      "date": "06/02/2026"
+    },
+    {
+      "name": "VAULT_07",
+      "score": 195074,
+      "date": "17/05/2026"
+    },
+    {
+      "name": "RETROVIRA",
+      "score": 193429,
+      "date": "11/07/2026"
+    },
+    {
+      "name": "CYBER_LU",
+      "score": 179935,
+      "date": "23/12/2026"
+    },
+    {
+      "name": "VECTORX",
+      "score": 108899,
+      "date": "08/12/2026"
+    },
+    {
+      "name": "PX_KAI",
+      "score": 102080,
+      "date": "09/03/2026"
+    },
+    {
+      "name": "DROID_X",
+      "score": 58663,
+      "date": "16/11/2026"
+    },
+    {
+      "name": "JOY_STK",
+      "score": 49834,
+      "date": "12/01/2026"
+    },
+    {
+      "name": "GLITCHA",
+      "score": 39744,
+      "date": "05/06/2026"
+    }
+  ],
+  "serpentina": [
+    {
+      "name": "DROID_X",
+      "score": 270582,
+      "date": "22/03/2026"
+    },
+    {
+      "name": "RGB_QUEEN",
+      "score": 259517,
+      "date": "16/02/2026"
+    },
+    {
+      "name": "ARKADYA",
+      "score": 255001,
+      "date": "20/01/2026"
+    },
+    {
+      "name": "NEONFOX",
+      "score": 238365,
+      "date": "10/04/2026"
+    },
+    {
+      "name": "VAULT_07",
+      "score": 192053,
+      "date": "18/03/2026"
+    },
+    {
+      "name": "JOY_STK",
+      "score": 131767,
+      "date": "05/04/2026"
+    },
+    {
+      "name": "SCANLINE",
+      "score": 123815,
+      "date": "15/06/2026"
+    },
+    {
+      "name": "PX_KAI",
+      "score": 120785,
+      "date": "17/03/2026"
+    },
+    {
+      "name": "CYBER_LU",
+      "score": 110896,
+      "date": "16/03/2026"
+    },
+    {
+      "name": "MAGENTA88",
+      "score": 94783,
+      "date": "07/06/2026"
+    },
+    {
+      "name": "PIXEL_DAD",
+      "score": 44169,
+      "date": "24/01/2026"
+    },
+    {
+      "name": "VECTORX",
+      "score": 23452,
+      "date": "28/05/2026"
+    }
+  ],
+  "gloton": [
+    {
+      "name": "JOY_STK",
+      "score": 279079,
+      "date": "26/01/2026"
+    },
+    {
+      "name": "PIXEL_DAD",
+      "score": 267110,
+      "date": "10/01/2026"
+    },
+    {
+      "name": "PX_KAI",
+      "score": 214662,
+      "date": "01/05/2026"
+    },
+    {
+      "name": "DROID_X",
+      "score": 203174,
+      "date": "16/11/2026"
+    },
+    {
+      "name": "VECTORX",
+      "score": 202488,
+      "date": "28/03/2026"
+    },
+    {
+      "name": "RGB_QUEEN",
+      "score": 195723,
+      "date": "11/09/2026"
+    },
+    {
+      "name": "MAGENTA88",
+      "score": 191010,
+      "date": "12/04/2026"
+    },
+    {
+      "name": "SCANLINE",
+      "score": 186887,
+      "date": "05/08/2026"
+    },
+    {
+      "name": "ATARI_KID",
+      "score": 183133,
+      "date": "05/04/2026"
+    },
+    {
+      "name": "BIT_LORD",
+      "score": 143287,
+      "date": "07/04/2026"
+    },
+    {
+      "name": "RETROVIRA",
+      "score": 128647,
+      "date": "27/07/2026"
+    },
+    {
+      "name": "VAULT_07",
+      "score": 67068,
+      "date": "13/12/2026"
+    }
+  ],
+  "invasores": [
+    {
+      "name": "NEONFOX",
+      "score": 286640,
+      "date": "28/05/2026"
+    },
+    {
+      "name": "ATARI_KID",
+      "score": 261239,
+      "date": "25/10/2026"
+    },
+    {
+      "name": "ARKADYA",
+      "score": 245303,
+      "date": "11/06/2026"
+    },
+    {
+      "name": "MAGENTA88",
+      "score": 238189,
+      "date": "28/10/2026"
+    },
+    {
+      "name": "RGB_QUEEN",
+      "score": 198521,
+      "date": "22/04/2026"
+    },
+    {
+      "name": "BIT_LORD",
+      "score": 195542,
+      "date": "25/09/2026"
+    },
+    {
+      "name": "VECTORX",
+      "score": 170503,
+      "date": "15/02/2026"
+    },
+    {
+      "name": "VAULT_07",
+      "score": 140256,
+      "date": "17/10/2026"
+    },
+    {
+      "name": "PX_KAI",
+      "score": 47871,
+      "date": "03/09/2026"
+    },
+    {
+      "name": "M00NRYU",
+      "score": 29677,
+      "date": "01/01/2026"
+    },
+    {
+      "name": "JOY_STK",
+      "score": 22397,
+      "date": "27/08/2026"
+    },
+    {
+      "name": "RETROVIRA",
+      "score": 1000,
+      "date": "25/03/2026"
+    }
+  ],
+  "rocas": [
+    {
+      "name": "PIXEL_DAD",
+      "score": 278245,
+      "date": "27/05/2026"
+    },
+    {
+      "name": "Z3R0COOL",
+      "score": 225057,
+      "date": "20/01/2026"
+    },
+    {
+      "name": "NEONFOX",
+      "score": 222599,
+      "date": "28/04/2026"
+    },
+    {
+      "name": "ARKADYA",
+      "score": 216608,
+      "date": "06/02/2026"
+    },
+    {
+      "name": "VAULT_07",
+      "score": 195074,
+      "date": "17/05/2026"
+    },
+    {
+      "name": "RETROVIRA",
+      "score": 193429,
+      "date": "11/07/2026"
+    },
+    {
+      "name": "CYBER_LU",
+      "score": 179935,
+      "date": "23/12/2026"
+    },
+    {
+      "name": "VECTORX",
+      "score": 108899,
+      "date": "08/12/2026"
+    },
+    {
+      "name": "PX_KAI",
+      "score": 102080,
+      "date": "09/03/2026"
+    },
+    {
+      "name": "DROID_X",
+      "score": 58663,
+      "date": "16/11/2026"
+    },
+    {
+      "name": "JOY_STK",
+      "score": 49834,
+      "date": "12/01/2026"
+    },
+    {
+      "name": "GLITCHA",
+      "score": 39744,
+      "date": "05/06/2026"
+    }
+  ],
+  "ranaria": [
+    {
+      "name": "ATARI_KID",
+      "score": 274036,
+      "date": "28/02/2026"
+    },
+    {
+      "name": "CYBER_LU",
+      "score": 248743,
+      "date": "10/10/2026"
+    },
+    {
+      "name": "Z3R0COOL",
+      "score": 221737,
+      "date": "26/01/2026"
+    },
+    {
+      "name": "RETROVIRA",
+      "score": 171321,
+      "date": "26/09/2026"
+    },
+    {
+      "name": "MAGENTA88",
+      "score": 149988,
+      "date": "07/08/2026"
+    },
+    {
+      "name": "BIT_LORD",
+      "score": 138861,
+      "date": "01/03/2026"
+    },
+    {
+      "name": "M00NRYU",
+      "score": 116754,
+      "date": "16/07/2026"
+    },
+    {
+      "name": "VAULT_07",
+      "score": 112288,
+      "date": "25/03/2026"
+    },
+    {
+      "name": "DROID_X",
+      "score": 109893,
+      "date": "26/07/2026"
+    },
+    {
+      "name": "GLITCHA",
+      "score": 102992,
+      "date": "15/12/2026"
+    },
+    {
+      "name": "VECTORX",
+      "score": 85560,
+      "date": "25/10/2026"
+    },
+    {
+      "name": "PX_KAI",
+      "score": 49903,
+      "date": "03/04/2026"
+    }
+  ],
+  "duelo-pixel": [
+    {
+      "name": "SCANLINE",
+      "score": 281190,
+      "date": "23/11/2026"
+    },
+    {
+      "name": "GLITCHA",
+      "score": 231848,
+      "date": "18/07/2026"
+    },
+    {
+      "name": "VECTORX",
+      "score": 210992,
+      "date": "02/07/2026"
+    },
+    {
+      "name": "ARKADYA",
+      "score": 151133,
+      "date": "14/10/2026"
+    },
+    {
+      "name": "PIXEL_DAD",
+      "score": 129572,
+      "date": "05/06/2026"
+    },
+    {
+      "name": "JOY_STK",
+      "score": 93040,
+      "date": "10/08/2026"
+    },
+    {
+      "name": "RGB_QUEEN",
+      "score": 85990,
+      "date": "09/11/2026"
+    },
+    {
+      "name": "Z3R0COOL",
+      "score": 79598,
+      "date": "05/04/2026"
+    },
+    {
+      "name": "M00NRYU",
+      "score": 75621,
+      "date": "20/03/2026"
+    },
+    {
+      "name": "NEONFOX",
+      "score": 67338,
+      "date": "24/04/2026"
+    },
+    {
+      "name": "VAULT_07",
+      "score": 65201,
+      "date": "06/07/2026"
+    },
+    {
+      "name": "BIT_LORD",
+      "score": 61481,
+      "date": "19/11/2026"
+    }
+  ]
+}
