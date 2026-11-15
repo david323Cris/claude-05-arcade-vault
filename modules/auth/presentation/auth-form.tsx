@@ -130,8 +130,8 @@ export function AuthForm() {
 
         <div className="auth-divider">O CONTINÚA CON</div>
         <div className="social">
-          <button className="btn ghost" type="button">◆&nbsp; GOOGLE</button>
-          <button className="btn ghost" type="button">▣&nbsp; GITHUB</button>
+          <button className="btn ghost" type="button">◆ GOOGLE</button>
+          <button className="btn ghost" type="button">▣ GITHUB</button>
         </div>
 
         <div

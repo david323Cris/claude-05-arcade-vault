@@ -11,6 +11,7 @@ const pressStart = Press_Start_2P({
   weight: "400",
   subsets: ["latin"],
   display: "swap",
+  adjustFontFallback: false, // la referencia cae directo a system-ui; el fallback ajustado agranda glifos como ♥
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -18,6 +19,7 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["400", "500", "700"],
   subsets: ["latin"],
   display: "swap",
+  adjustFontFallback: false,
 });
 
 const courierPrime = Courier_Prime({

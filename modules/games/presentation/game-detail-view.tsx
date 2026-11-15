@@ -39,7 +39,7 @@ export function GameDetailView({ game, children }: { game: Game; children?: Reac
           </div>
           <div className="detail-actions">
             <Link className="btn xl pulse" href={`/juegos/${game.id}/jugar`}>
-              ▶&nbsp; JUGAR AHORA
+              ▶ JUGAR AHORA
             </Link>
             <Link className="btn ghost lg" href="/">
               VOLVER AL VAULT
