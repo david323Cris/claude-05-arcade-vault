@@ -5,12 +5,13 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { useSession } from "@/modules/auth";
 
-type Section = "home" | "biblioteca" | "salon" | "auth";
+type Section = "home" | "biblioteca" | "salon" | "about" | "auth";
 
 function sectionOf(pathname: string): Section | null {
   if (pathname === "/") return "home";
   if (pathname.startsWith("/games")) return "biblioteca";
   if (pathname.startsWith("/hall-of-fame")) return "salon";
+  if (pathname.startsWith("/about")) return "about";
   if (pathname.startsWith("/auth")) return "auth";
   return null;
 }
@@ -37,6 +38,7 @@ export function Nav() {
           <Link className={cls("home")} href="/">Inicio</Link>
           <Link className={cls("biblioteca")} href="/games">Biblioteca</Link>
           <Link className={cls("salon")} href="/hall-of-fame">Salón de la Fama</Link>
+          <Link className={cls("about")} href="/about">Acerca de</Link>
         </div>
         <div className="spacer"></div>
         <div className="coin-counter">
@@ -65,6 +67,7 @@ export function Nav() {
         <Link className={cls("home")} href="/" onClick={close}>Inicio</Link>
         <Link className={cls("biblioteca")} href="/games" onClick={close}>Biblioteca</Link>
         <Link className={cls("salon")} href="/hall-of-fame" onClick={close}>Salón de la Fama</Link>
+        <Link className={cls("about")} href="/about" onClick={close}>Acerca de</Link>
         <Link className={cls("auth")} href="/auth" onClick={close}>
           {user ? "Cuenta" : "Iniciar Sesión"}
         </Link>
