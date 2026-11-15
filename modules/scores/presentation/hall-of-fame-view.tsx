@@ -184,7 +184,7 @@ export function HallOfFameView({ games, playerName = null, error = null }: HallO
       )}
 
       <div style={{ textAlign: "center", marginTop: 32 }}>
-        <Link className="btn lg" href="/">
+        <Link className="btn lg" href="/games">
           VOLVER A LA BIBLIOTECA
         </Link>
       </div>

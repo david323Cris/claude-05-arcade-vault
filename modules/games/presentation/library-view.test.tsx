@@ -17,7 +17,7 @@ describe("LibraryView", () => {
     expect(screen.getAllByRole("link")).toHaveLength(2);
     expect(screen.getByRole("link", { name: /BLOQUE BUSTER/ })).toHaveAttribute(
       "href",
-      "/juegos/bloque-buster",
+      "/games/bloque-buster",
     );
   });
 
