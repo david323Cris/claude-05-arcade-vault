@@ -1,9 +1,12 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { GameDetailView } from "@/modules/games";
 import { gamesGateway } from "@/modules/games/composition.client";
 import { Leaderboard } from "@/modules/scores";
 import { scoresGateway } from "@/modules/scores/composition.client";
+
+export const metadata: Metadata = { title: "Detalle del juego" };
 
 const isNotFound = (e: unknown) => (e as { status?: number } | null)?.status === 404;
 

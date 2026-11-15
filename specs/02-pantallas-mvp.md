@@ -114,34 +114,34 @@ interface SessionContext {
 
 ## Acceptance criteria
 
-- [ ] `npm run build` termina sin errores ni errores de tipos.
-- [ ] `npm run lint` termina sin errores, incluidas las reglas de límites de la SPEC 01.
-- [ ] `npm run test` (Vitest) pasa todos los tests, incluidos los de la SPEC 01.
-- [ ] Hay tests de dominio para `filterGames`, `buildPodium` y `play-session`.
-- [ ] Hay tests de componente para: provider de sesión, Biblioteca, formulario de Auth, pestañas del Salón y Reproductor (pausa, fin y guardado).
-- [ ] No hay dependencia, config ni script de Playwright en el proyecto.
-- [ ] Existen las rutas `/`, `/juegos/[id]`, `/juegos/[id]/jugar`, `/auth` y `/salon`, y cada una renderiza la pantalla equivalente de la plantilla.
-- [ ] Los componentes viven en `modules/*/presentation` o `app/_components`; `app/**/page.tsx` solo compone módulos y no contiene lógica de negocio ni estado de UI propio.
-- [ ] Ningún archivo de `presentation/` ni `app/` importa `infrastructure`, archivos `.json` o `fs`; los datos llegan solo por gateways.
-- [ ] El módulo `play` no importa `scores`; la única arista entre módulos nueva es `play → auth`.
-- [ ] `/juegos/xyz` y `/juegos/xyz/jugar` muestran 404.
-- [ ] La Biblioteca muestra 8 juegos; escribir "caí" deja 1 y una combinación sin coincidencias muestra "NO HAY RESULTADOS".
-- [ ] Si la API de juegos falla, la Biblioteca muestra un mensaje de error con botón de reintento (no pantalla en blanco).
-- [ ] Hacer clic en una tarjeta navega a `/juegos/<id>` y "JUGAR AHORA" navega a `/juegos/<id>/jugar`.
-- [ ] El Detalle muestra 10 filas de leaderboard ordenadas de mayor a menor, con rangos `#01`…`#10`.
-- [ ] El Salón muestra podio, 12 filas y una pestaña por cada uno de los 8 juegos; cambiar de pestaña hace una petición nueva.
-- [ ] Iniciar sesión con `PX_KAI` / `vault123` redirige a `/` y el Nav muestra `PX_KAI`; con contraseña incorrecta se muestra el error de la API y no se redirige.
-- [ ] Registrar un usuario nuevo inicia sesión; repetir el mismo usuario muestra el error de conflicto.
-- [ ] La sesión persiste al recargar la página y "cerrar sesión" vuelve a mostrar "Iniciar Sesión" en el Nav.
-- [ ] Sin sesión, el Reproductor muestra jugador `INVITADO` y permite guardar puntuación; con sesión, muestra el nombre del usuario.
-- [ ] En el Reproductor la puntuación crece sola; con PAUSA deja de crecer y aparece "EN PAUSA"; REANUDAR la retoma.
-- [ ] FIN abre el modal con la puntuación final; GUARDAR PUNTUACIÓN llama a la API y muestra "PUNTUACIÓN GUARDADA"; JUGAR DE NUEVO reinicia a 0 puntos, 3 vidas, nivel 01.
-- [ ] Si el guardado falla, el modal muestra un error y permite reintentar sin perder la puntuación.
-- [ ] Una puntuación guardada aparece en el Detalle y en el Salón del mismo juego con el rango correcto.
-- [ ] Los tests no modifican los archivos de `data/` versionados (los tests de componente simulan los gateways).
-- [ ] En ancho de 375 px no hay scroll horizontal, la hamburguesa abre y cierra el panel móvil y el Nav de escritorio no se muestra.
-- [ ] La consola del navegador no muestra errores de hidratación en ninguna ruta.
-- [ ] No existe ningún código de juego real (solo la arena decorativa).
+- [x] `npm run build` termina sin errores ni errores de tipos.
+- [x] `npm run lint` termina sin errores, incluidas las reglas de límites de la SPEC 01.
+- [x] `npm run test` (Vitest) pasa todos los tests, incluidos los de la SPEC 01.
+- [x] Hay tests de dominio para `filterGames`, `buildPodium` y `play-session`.
+- [x] Hay tests de componente para: provider de sesión, Biblioteca, formulario de Auth, pestañas del Salón y Reproductor (pausa, fin y guardado).
+- [x] No hay dependencia, config ni script de Playwright en el proyecto.
+- [x] Existen las rutas `/`, `/juegos/[id]`, `/juegos/[id]/jugar`, `/auth` y `/salon`, y cada una renderiza la pantalla equivalente de la plantilla.
+- [x] Los componentes viven en `modules/*/presentation` o `app/_components`; `app/**/page.tsx` solo compone módulos y no contiene lógica de negocio ni estado de UI propio.
+- [x] Ningún archivo de `presentation/` ni `app/` importa `infrastructure`, archivos `.json` o `fs`; los datos llegan solo por gateways.
+- [x] El módulo `play` no importa `scores`; la única arista entre módulos nueva es `play → auth`.
+- [x] `/juegos/xyz` y `/juegos/xyz/jugar` muestran 404.
+- [x] La Biblioteca muestra 8 juegos; escribir "caí" deja 1 y una combinación sin coincidencias muestra "NO HAY RESULTADOS".
+- [x] Si la API de juegos falla, la Biblioteca muestra un mensaje de error con botón de reintento (no pantalla en blanco).
+- [x] Hacer clic en una tarjeta navega a `/juegos/<id>` y "JUGAR AHORA" navega a `/juegos/<id>/jugar`.
+- [x] El Detalle muestra 10 filas de leaderboard ordenadas de mayor a menor, con rangos `#01`…`#10`.
+- [x] El Salón muestra podio, 12 filas y una pestaña por cada uno de los 8 juegos; cambiar de pestaña hace una petición nueva.
+- [x] Iniciar sesión con `PX_KAI` / `vault123` redirige a `/` y el Nav muestra `PX_KAI`; con contraseña incorrecta se muestra el error de la API y no se redirige.
+- [x] Registrar un usuario nuevo inicia sesión; repetir el mismo usuario muestra el error de conflicto.
+- [x] La sesión persiste al recargar la página y "cerrar sesión" vuelve a mostrar "Iniciar Sesión" en el Nav.
+- [x] Sin sesión, el Reproductor muestra jugador `INVITADO` y permite guardar puntuación; con sesión, muestra el nombre del usuario.
+- [x] En el Reproductor la puntuación crece sola; con PAUSA deja de crecer y aparece "EN PAUSA"; REANUDAR la retoma.
+- [x] FIN abre el modal con la puntuación final; GUARDAR PUNTUACIÓN llama a la API y muestra "PUNTUACIÓN GUARDADA"; JUGAR DE NUEVO reinicia a 0 puntos, 3 vidas, nivel 01.
+- [x] Si el guardado falla, el modal muestra un error y permite reintentar sin perder la puntuación.
+- [x] Una puntuación guardada aparece en el Detalle y en el Salón del mismo juego con el rango correcto.
+- [x] Los tests no modifican los archivos de `data/` versionados (los tests de componente simulan los gateways).
+- [x] En ancho de 375 px no hay scroll horizontal, la hamburguesa abre y cierra el panel móvil y el Nav de escritorio no se muestra.
+- [x] La consola del navegador no muestra errores de hidratación en ninguna ruta.
+- [x] No existe ningún código de juego real (solo la arena decorativa).
 
 ---
 

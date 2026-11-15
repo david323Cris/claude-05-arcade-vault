@@ -1,7 +1,10 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { gamesGateway } from "@/modules/games/composition.client";
 import { PlayerScreen } from "@/modules/play";
+
+export const metadata: Metadata = { title: "Jugar" };
 
 async function Player({ params }: { params: PageProps<"/juegos/[id]/jugar">["params"] }) {
   const { id } = await params;

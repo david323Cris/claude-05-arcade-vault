@@ -1,7 +1,10 @@
+import type { Metadata } from "next";
 import { Suspense } from "react";
 import { LibraryView } from "@/modules/games";
 import type { Game } from "@/modules/games";
 import { gamesGateway } from "@/modules/games/composition.client";
+
+export const metadata: Metadata = { title: { absolute: "Biblioteca · Arcade Vault" } };
 
 async function loadLibrary(): Promise<{ games: Game[]; categories: string[]; error: string | null }> {
   try {

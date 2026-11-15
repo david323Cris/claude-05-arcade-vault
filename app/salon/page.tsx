@@ -1,6 +1,9 @@
+import type { Metadata } from "next";
 import { Suspense } from "react";
 import { gamesGateway } from "@/modules/games/composition.client";
 import { HallOfFameScreen } from "../_components/hall-of-fame-screen";
+
+export const metadata: Metadata = { title: "Salón de la Fama" };
 
 async function loadGames(): Promise<{ games: { id: string; title: string }[]; error: string | null }> {
   try {
