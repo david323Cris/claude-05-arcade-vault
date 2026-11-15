@@ -1,6 +1,6 @@
 # SPEC 04 — Página "Acerca de" y formulario de contacto con Resend
 
-> **Status:** Aprobado
+> **Status:** Implementado
 > **Depends on:** SPEC 01, SPEC 02, SPEC 03
 > **Date:** 2026-11-15
 > **Objective:** Implementar la página `/about` exactamente como `references/templates/home-about/about.jsx` (con su CSS) y hacer que su formulario de contacto envíe de verdad un correo al equipo mediante Resend, a través de un módulo `contact` con arquitectura limpia, un puerto `EmailSender` y `POST /api/contact`.
@@ -139,28 +139,28 @@ interface EmailSender { send(email: { to: string; from: string; replyTo: string;
 
 ## Acceptance criteria
 
-- [ ] `npm run build` termina sin errores ni errores de tipos.
-- [ ] `npm run lint` termina sin errores, incluidas las reglas de límites de las SPEC 01/02.
-- [ ] `npm run test` pasa todos los tests, incluidos los nuevos y `nav.test.tsx` actualizado.
-- [ ] `/about` renderiza el hero, los 3 highlights (con iconos HEART, BROWSER, PLANT), el divisor y la sección "CONTÁCTANOS" con 3 tips y el formulario, con el mismo copy y estructura que `about.jsx`.
-- [ ] El Nav (escritorio y panel móvil) muestra Inicio, Biblioteca, Salón de la Fama y Acerca de; "Acerca de" navega a `/about` y está activo solo en `/about`.
-- [ ] Al hacer scroll, las secciones `.reveal` reciben `in`; sin `IntersectionObserver` el contenido es visible.
-- [ ] Enviar el formulario con algún campo vacío (o solo espacios) no hace ninguna petición y aplica la animación `shake`.
-- [ ] Con datos válidos, el formulario muestra "ENVIANDO…" con el botón deshabilitado y, al terminar, la terminal "VAULT-OS // TERMINAL" con `GRACIAS, {NOMBRE}` en mayúsculas.
-- [ ] "ENVIAR OTRO MENSAJE" vuelve al formulario con todos los campos vacíos.
-- [ ] `POST /api/contact` con datos válidos responde `201 { ok: true }` y llama una vez a `EmailSender.send` con `to = CONTACT_TO_EMAIL`, `from = CONTACT_FROM_EMAIL` (o `onboarding@resend.dev` si no está definida), `replyTo` = correo del visitante y asunto `Arcade Vault · Contacto de {name}`.
-- [ ] `POST /api/contact` con campos vacíos, correo inválido o textos que exceden los límites responde `400` con `fields` y no envía correo.
-- [ ] `POST /api/contact` con JSON malformado responde `400`.
-- [ ] Con el honeypot (`website`) relleno, la API responde `201` y no se envía ningún correo.
-- [ ] Si Resend falla o faltan `RESEND_API_KEY`/`CONTACT_TO_EMAIL`, la API responde `500 { error: "send_failed" }` sin exponer detalles internos, y el formulario muestra "NO SE PUDO ENVIAR EL MENSAJE. INTÉNTALO DE NUEVO." conservando lo escrito.
-- [ ] El HTML del correo escapa el contenido del visitante (un mensaje con `<script>` no se inserta sin escapar).
-- [ ] Solo `modules/contact/infrastructure/resend-email-sender.ts` importa `resend`; `domain`, `application`, `presentation` y `app/` no lo importan.
-- [ ] `RESEND_API_KEY` no aparece en el bundle del cliente ni en ningún archivo versionado; `.env.example` documenta las 3 variables.
-- [ ] Ningún test llama a Resend real ni necesita `RESEND_API_KEY`; los tests no modifican los archivos versionados de `data/`.
-- [ ] Prueba manual con credenciales reales: un mensaje enviado desde `/about` llega a la bandeja de `CONTACT_TO_EMAIL` con nombre, correo y mensaje, y responder al correo apunta al visitante.
-- [ ] En 375 px `/about` no tiene scroll horizontal y los highlights y el formulario se apilan según la plantilla.
-- [ ] Las pantallas existentes (Home, Biblioteca, Detalle, Reproductor, Auth, Salón) conservan su aspecto tras portar los estilos.
-- [ ] La consola del navegador no muestra errores de hidratación en `/about`.
+- [x] `npm run build` termina sin errores ni errores de tipos.
+- [x] `npm run lint` termina sin errores, incluidas las reglas de límites de las SPEC 01/02.
+- [ ] `npm run test` pasa todos los tests, incluidos los nuevos y `nav.test.tsx` actualizado. **PENDIENTE:** 285/290 pasan; fallan 5 tests de registro en `app/api/auth/auth-routes.test.ts` por un tercer usuario en `data/users.json` (commit `9768823`, SPEC 03). Ya fallan en `main`; no los causa esta spec.
+- [x] `/about` renderiza el hero, los 3 highlights (con iconos HEART, BROWSER, PLANT), el divisor y la sección "CONTÁCTANOS" con 3 tips y el formulario, con el mismo copy y estructura que `about.jsx`.
+- [x] El Nav (escritorio y panel móvil) muestra Inicio, Biblioteca, Salón de la Fama y Acerca de; "Acerca de" navega a `/about` y está activo solo en `/about`.
+- [x] Al hacer scroll, las secciones `.reveal` reciben `in`; sin `IntersectionObserver` el contenido es visible.
+- [x] Enviar el formulario con algún campo vacío (o solo espacios) no hace ninguna petición y aplica la animación `shake`.
+- [x] Con datos válidos, el formulario muestra "ENVIANDO…" con el botón deshabilitado y, al terminar, la terminal "VAULT-OS // TERMINAL" con `GRACIAS, {NOMBRE}` en mayúsculas.
+- [x] "ENVIAR OTRO MENSAJE" vuelve al formulario con todos los campos vacíos.
+- [x] `POST /api/contact` con datos válidos responde `201 { ok: true }` y llama una vez a `EmailSender.send` con `to = CONTACT_TO_EMAIL`, `from = CONTACT_FROM_EMAIL` (o `onboarding@resend.dev` si no está definida), `replyTo` = correo del visitante y asunto `Arcade Vault · Contacto de {name}`.
+- [x] `POST /api/contact` con campos vacíos, correo inválido o textos que exceden los límites responde `400` con `fields` y no envía correo.
+- [x] `POST /api/contact` con JSON malformado responde `400`.
+- [x] Con el honeypot (`website`) relleno, la API responde `201` y no se envía ningún correo.
+- [x] Si Resend falla o faltan `RESEND_API_KEY`/`CONTACT_TO_EMAIL`, la API responde `500 { error: "send_failed" }` sin exponer detalles internos, y el formulario muestra "NO SE PUDO ENVIAR EL MENSAJE. INTÉNTALO DE NUEVO." conservando lo escrito.
+- [x] El HTML del correo escapa el contenido del visitante (un mensaje con `<script>` no se inserta sin escapar).
+- [x] Solo `modules/contact/infrastructure/resend-email-sender.ts` importa `resend`; `domain`, `application`, `presentation` y `app/` no lo importan.
+- [x] `RESEND_API_KEY` no aparece en el bundle del cliente ni en ningún archivo versionado; `.env.example` documenta las 3 variables.
+- [x] Ningún test llama a Resend real ni necesita `RESEND_API_KEY`; los tests no modifican los archivos versionados de `data/`.
+- [ ] Prueba manual con credenciales reales: un mensaje enviado desde `/about` llega a la bandeja de `CONTACT_TO_EMAIL` con nombre, correo y mensaje, y responder al correo apunta al visitante. **PENDIENTE:** la API aceptó el envío y el formulario mostró la terminal; falta confirmar la llegada del correo en la bandeja.
+- [x] En 375 px `/about` no tiene scroll horizontal y los highlights y el formulario se apilan según la plantilla.
+- [x] Las pantallas existentes (Home, Biblioteca, Detalle, Reproductor, Auth, Salón) conservan su aspecto tras portar los estilos.
+- [x] La consola del navegador no muestra errores de hidratación en `/about`.
 
 ---
 
