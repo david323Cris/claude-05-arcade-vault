@@ -1,6 +1,6 @@
 # SPEC 01 — API simulada de Arcade Vault respaldada por JSON (arquitectura modular y limpia)
 
-> **Status:** aprobado
+> **Status:** implementado
 > **Depends on:** Ninguna
 > **Date:** 2026-11-14
 > **Objective:** Crear un backend simulado con Route Handlers `/api/*` de Next.js, respaldado por archivos JSON y organizado en módulos por feature con arquitectura limpia, que sirva juegos, categorías, puntuaciones y autenticación para que las pantallas solo hagan peticiones HTTP.
@@ -207,30 +207,30 @@ Casos de uso (clases con `execute()`, dependencias por constructor): `ListGames`
 
 ## Acceptance criteria
 
-- [ ] `npm run build` termina sin errores ni errores de tipos.
-- [ ] `npm run lint` termina sin errores e incluye las reglas de límites de capas y de módulos.
-- [ ] Un import prohibido (p. ej. `domain` → `infrastructure`, o un módulo importando la ruta interna de otro) hace fallar `npm run lint`.
-- [ ] `npm run test` pasa todos los tests.
-- [ ] Existen `modules/games`, `modules/scores` y `modules/auth`, cada uno con `domain/`, `application/{ports,use-cases}/`, `infrastructure/{server,client}/`, `testing/`, `composition.server.ts`, `composition.client.ts`, `index.ts` y `server.ts`.
-- [ ] Ningún archivo de `domain/` ni `application/` importa `next`, `react`, `fs` ni `fetch`; los casos de uso se prueban solo con repositorios en memoria.
-- [ ] Cada Route Handler de `app/api/**` importa solo `server.ts` de módulos y `shared/infrastructure/http`; ninguno contiene reglas de negocio.
-- [ ] Solo `shared/infrastructure/json-store.ts` lee o escribe `data/*.json`, y `DATA_DIR` solo se lee en `shared/config/env.ts`.
-- [ ] Los repositorios JSON y los en memoria pasan el mismo conjunto de pruebas de contrato.
-- [ ] Existen `data/games.json`, `data/categories.json`, `data/scores.json` y `data/users.json`.
-- [ ] `GET /api/games` devuelve 8 juegos con ids únicos y `GET /api/categories` devuelve 5 categorías.
-- [ ] `GET /api/games/xyz` y `GET /api/games/xyz/scores` devuelven 404 con `{ "error": … }`.
-- [ ] `GET /api/games/bloque-buster/scores` devuelve 12 entradas ordenadas de mayor a menor con `rank` 1..12; con `?limit=10` devuelve 10.
-- [ ] `POST /api/auth/login` con `PX_KAI` / `vault123` devuelve 200 y una cookie `av_session` con atributo `HttpOnly`; con contraseña incorrecta devuelve 401.
-- [ ] `POST /api/auth/register` con un usuario nuevo válido devuelve 201, añade el usuario a `users.json` y establece la cookie; repetirlo con otra capitalización devuelve 409; datos inválidos devuelven 400.
-- [ ] `GET /api/auth/me` devuelve 200 con la cookie y 401 sin ella; `POST /api/auth/logout` devuelve 204 y borra la cookie.
-- [ ] `POST /api/games/bloque-buster/scores` con `{ name: "ana", score: 999999 }` devuelve 201 con `name: "ANA"` y `rank: 1`, y la entrada aparece en `scores.json` y en el GET posterior.
-- [ ] `POST` de puntuación con `score` negativo, decimal o con `name` vacío devuelve 400.
-- [ ] `you` es `null` sin sesión y, con sesión y una puntuación guardada con ese nombre, devuelve su mejor marca y rango.
-- [ ] Dos `POST` de puntuación simultáneos conservan ambas entradas.
-- [ ] Un error inesperado devuelve 500 con mensaje genérico, sin detalles internos.
-- [ ] Los gateways HTTP solicitan las URLs y métodos de la tabla de endpoints y convierten `{ error }` en `ApiError`.
-- [ ] Los tests no modifican los archivos de `data/` versionados.
-- [ ] Ninguna respuesta de la API incluye el campo `password`.
+- [x] `npm run build` termina sin errores ni errores de tipos.
+- [x] `npm run lint` termina sin errores e incluye las reglas de límites de capas y de módulos.
+- [x] Un import prohibido (p. ej. `domain` → `infrastructure`, o un módulo importando la ruta interna de otro) hace fallar `npm run lint`.
+- [x] `npm run test` pasa todos los tests.
+- [x] Existen `modules/games`, `modules/scores` y `modules/auth`, cada uno con `domain/`, `application/{ports,use-cases}/`, `infrastructure/{server,client}/`, `testing/`, `composition.server.ts`, `composition.client.ts`, `index.ts` y `server.ts`.
+- [x] Ningún archivo de `domain/` ni `application/` importa `next`, `react`, `fs` ni `fetch`; los casos de uso se prueban solo con repositorios en memoria.
+- [x] Cada Route Handler de `app/api/**` importa solo `server.ts` de módulos y `shared/infrastructure/http`; ninguno contiene reglas de negocio.
+- [x] Solo `shared/infrastructure/json-store.ts` lee o escribe `data/*.json`, y `DATA_DIR` solo se lee en `shared/config/env.ts`.
+- [x] Los repositorios JSON y los en memoria pasan el mismo conjunto de pruebas de contrato.
+- [x] Existen `data/games.json`, `data/categories.json`, `data/scores.json` y `data/users.json`.
+- [x] `GET /api/games` devuelve 8 juegos con ids únicos y `GET /api/categories` devuelve 5 categorías.
+- [x] `GET /api/games/xyz` y `GET /api/games/xyz/scores` devuelven 404 con `{ "error": … }`.
+- [x] `GET /api/games/bloque-buster/scores` devuelve 12 entradas ordenadas de mayor a menor con `rank` 1..12; con `?limit=10` devuelve 10.
+- [x] `POST /api/auth/login` con `PX_KAI` / `vault123` devuelve 200 y una cookie `av_session` con atributo `HttpOnly`; con contraseña incorrecta devuelve 401.
+- [x] `POST /api/auth/register` con un usuario nuevo válido devuelve 201, añade el usuario a `users.json` y establece la cookie; repetirlo con otra capitalización devuelve 409; datos inválidos devuelven 400.
+- [x] `GET /api/auth/me` devuelve 200 con la cookie y 401 sin ella; `POST /api/auth/logout` devuelve 204 y borra la cookie.
+- [x] `POST /api/games/bloque-buster/scores` con `{ name: "ana", score: 999999 }` devuelve 201 con `name: "ANA"` y `rank: 1`, y la entrada aparece en `scores.json` y en el GET posterior.
+- [x] `POST` de puntuación con `score` negativo, decimal o con `name` vacío devuelve 400.
+- [x] `you` es `null` sin sesión y, con sesión y una puntuación guardada con ese nombre, devuelve su mejor marca y rango.
+- [x] Dos `POST` de puntuación simultáneos conservan ambas entradas.
+- [x] Un error inesperado devuelve 500 con mensaje genérico, sin detalles internos.
+- [x] Los gateways HTTP solicitan las URLs y métodos de la tabla de endpoints y convierten `{ error }` en `ApiError`.
+- [x] Los tests no modifican los archivos de `data/` versionados.
+- [x] Ninguna respuesta de la API incluye el campo `password`.
 
 ---
 
