@@ -1,3 +1,3 @@
 import "server-only";
 
-export { getGameScores } from "./composition.server";
+export { getGameScores, submitScore } from "./composition.server";
