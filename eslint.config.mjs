@@ -20,8 +20,9 @@ const boundariesConfig = {
       { type: "module-root", pattern: "modules/*", capture: ["module"], partialMatch: false },
       { type: "shared-kernel", pattern: "shared/kernel", partialMatch: false },
       { type: "shared-config", pattern: "shared/config", partialMatch: false },
-      { type: "shared-infra", pattern: "shared/infrastructure", partialMatch: false },
+      // shared-http va antes: su carpeta está dentro de shared/infrastructure.
       { type: "shared-http", pattern: "shared/infrastructure/http", partialMatch: false },
+      { type: "shared-infra", pattern: "shared/infrastructure", partialMatch: false },
       { type: "api", pattern: "app/api", partialMatch: false },
     ],
     "boundaries/files": [
@@ -80,11 +81,18 @@ const pureLayers = {
   },
 };
 
+// Los tests viven junto al código y necesitan cruzar capas (testing/, route handlers…).
+const testsConfig = {
+  files: ["**/*.test.ts"],
+  rules: { "boundaries/dependencies": "off" },
+};
+
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
   boundariesConfig,
   pureLayers,
+  testsConfig,
   // Override default ignores of eslint-config-next.
   globalIgnores([
     // Default ignores of eslint-config-next:
