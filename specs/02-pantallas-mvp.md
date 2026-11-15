@@ -1,6 +1,6 @@
 # SPEC 02 — Pantallas del MVP de Arcade Vault
 
-> **Status:** aprobado
+> **Status:** implementado
 > **Depends on:** SPEC 01
 > **Date:** 2026-11-14
 > **Objective:** Portar a Next.js (App Router, TypeScript) las 5 pantallas de `references/templates/` — Biblioteca, Detalle, Reproductor, Auth y Salón de la Fama — organizadas en la capa `presentation` de los módulos de la SPEC 01 y consumiendo la API simulada solo a través de gateways, sin implementar ningún juego real.
