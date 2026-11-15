@@ -44,4 +44,5 @@ next-env.d.ts
 # playwright
 .playwright-screenshots/*
 !.playwright-screenshots/.gitkeep
-.playwright-mcp/
+.playwright-mcp/*
+!.playwright-mcp/.gitkeep
