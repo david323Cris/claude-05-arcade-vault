@@ -83,7 +83,7 @@ const pureLayers = {
 
 // Los tests viven junto al código y necesitan cruzar capas (testing/, route handlers…).
 const testsConfig = {
-  files: ["**/*.test.ts"],
+  files: ["**/*.test.ts", "**/*.test.tsx"],
   rules: { "boundaries/dependencies": "off" },
 };
 
