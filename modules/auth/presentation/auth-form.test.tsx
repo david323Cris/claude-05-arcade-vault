@@ -42,7 +42,7 @@ describe("AuthForm", () => {
     await userEvent.type(screen.getByLabelText("Usuario"), "PX_KAI");
     await userEvent.type(screen.getByLabelText("Contraseña"), "vault123");
     await userEvent.click(screen.getByRole("button", { name: "ENTRAR AL VAULT" }));
-    await waitFor(() => expect(push).toHaveBeenCalledWith("/"));
+    await waitFor(() => expect(push).toHaveBeenCalledWith("/games"));
     expect(session.login).toHaveBeenCalledWith("PX_KAI", "vault123");
   });
 
@@ -65,7 +65,7 @@ describe("AuthForm", () => {
     await userEvent.type(screen.getByLabelText("Correo electrónico"), "n@vault.gg");
     await userEvent.type(screen.getByLabelText("Contraseña"), "secreto1");
     await userEvent.click(screen.getByRole("button", { name: "CREAR Y JUGAR" }));
-    await waitFor(() => expect(push).toHaveBeenCalledWith("/"));
+    await waitFor(() => expect(push).toHaveBeenCalledWith("/games"));
     expect(session.register).toHaveBeenCalledWith("nuevo_1", "n@vault.gg", "secreto1");
   });
 
@@ -95,7 +95,7 @@ describe("AuthForm", () => {
     session.signOut.mockResolvedValue(undefined);
     render(<AuthForm />);
     await userEvent.click(screen.getByRole("button", { name: "JUGAR COMO INVITADO" }));
-    await waitFor(() => expect(push).toHaveBeenCalledWith("/"));
+    await waitFor(() => expect(push).toHaveBeenCalledWith("/games"));
     expect(session.signOut).toHaveBeenCalled();
   });
 });

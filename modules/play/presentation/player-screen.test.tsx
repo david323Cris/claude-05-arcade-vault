@@ -123,6 +123,6 @@ describe("PlayerScreen", () => {
 
   it("SALIR enlaza al detalle del juego", () => {
     render(<PlayerScreen game={game} />);
-    expect(screen.getByRole("link", { name: "SALIR" })).toHaveAttribute("href", "/juegos/caida");
+    expect(screen.getByRole("link", { name: "SALIR" })).toHaveAttribute("href", "/games/caida");
   });
 });

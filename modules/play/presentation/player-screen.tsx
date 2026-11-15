@@ -63,7 +63,7 @@ export function PlayerScreen({ game }: { game: PlayableGame }) {
         lives={session.lives}
         level={session.level}
         paused={session.paused}
-        exitHref={`/juegos/${game.id}`}
+        exitHref={`/games/${game.id}`}
         onTogglePause={() => setSession(togglePause)}
         onEnd={() => setSession(end)}
       />

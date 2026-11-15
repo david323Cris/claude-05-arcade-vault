@@ -98,6 +98,6 @@ describe("HallOfFameView", () => {
 
   it("el botón de volver enlaza a la Biblioteca", () => {
     render(<HallOfFameView games={games} />);
-    expect(screen.getByRole("link", { name: "VOLVER A LA BIBLIOTECA" })).toHaveAttribute("href", "/");
+    expect(screen.getByRole("link", { name: "VOLVER A LA BIBLIOTECA" })).toHaveAttribute("href", "/games");
   });
 });

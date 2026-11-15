@@ -1,30 +1,29 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { LibraryView } from "@/modules/games";
 import type { Game } from "@/modules/games";
 import { gamesGateway } from "@/modules/games/composition.client";
+import { HomeView } from "./_components/home/home-view";
 
-export const metadata: Metadata = { title: { absolute: "Biblioteca · Arcade Vault" } };
+export const metadata: Metadata = { title: { absolute: "Arcade Vault · El arcade clásico está de vuelta" } };
 
-async function loadLibrary(): Promise<{ games: Game[]; categories: string[]; error: string | null }> {
+async function loadGames(): Promise<{ games: Game[]; error: string | null }> {
   try {
-    const [games, categories] = await Promise.all([gamesGateway.list(), gamesGateway.categories()]);
-    return { games, categories, error: null };
+    return { games: await gamesGateway.list(), error: null };
   } catch (e) {
     const error = e instanceof Error ? e.message : "No se pudieron cargar los juegos.";
-    return { games: [], categories: [], error };
+    return { games: [], error };
   }
 }
 
-async function Library() {
-  const { games, categories, error } = await loadLibrary();
-  return <LibraryView games={games} categories={categories} error={error} />;
+async function Home() {
+  const { games, error } = await loadGames();
+  return <HomeView games={games} error={error} />;
 }
 
-export default function Home() {
+export default function HomePage() {
   return (
     <Suspense fallback={<p className="pixel" style={{ padding: 80, textAlign: "center" }}>CARGANDO…</p>}>
-      <Library />
+      <Home />
     </Suspense>
   );
 }

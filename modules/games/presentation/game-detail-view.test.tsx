@@ -15,8 +15,8 @@ describe("GameDetailView", () => {
 
   it("JUGAR AHORA y VOLVER AL VAULT enlazan a las rutas correctas", () => {
     render(<GameDetailView game={sampleGames[0]} />);
-    expect(screen.getByRole("link", { name: /JUGAR AHORA/ })).toHaveAttribute("href", "/juegos/bloque-buster/jugar");
-    expect(screen.getByRole("link", { name: "VOLVER AL VAULT" })).toHaveAttribute("href", "/");
+    expect(screen.getByRole("link", { name: /JUGAR AHORA/ })).toHaveAttribute("href", "/games/bloque-buster/play");
+    expect(screen.getByRole("link", { name: "VOLVER AL VAULT" })).toHaveAttribute("href", "/games");
   });
 
   it("renderiza children en la columna lateral", () => {

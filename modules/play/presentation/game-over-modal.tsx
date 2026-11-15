@@ -46,7 +46,7 @@ export function GameOverModal({ score, name, status, error, onNameChange, onSave
 
         <div className="actions">
           <button className="btn" onClick={onRestart}>JUGAR DE NUEVO</button>
-          <Link className="btn magenta" href="/">VOLVER AL VAULT</Link>
+          <Link className="btn magenta" href="/games">VOLVER AL VAULT</Link>
         </div>
       </div>
     </div>

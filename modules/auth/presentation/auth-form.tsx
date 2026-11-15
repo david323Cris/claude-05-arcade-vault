@@ -31,7 +31,7 @@ export function AuthForm() {
     try {
       if (tab === "in") await login(username.trim(), password);
       else await register(username.trim(), email.trim(), password);
-      router.push("/");
+      router.push("/games");
     } catch (err) {
       setError(err instanceof Error ? err.message : "No se pudo completar la operación.");
       setSubmitting(false);
@@ -46,7 +46,7 @@ export function AuthForm() {
         // si falla el cierre se continúa igualmente hacia la Biblioteca
       }
     }
-    router.push("/");
+    router.push("/games");
   };
 
   return (
